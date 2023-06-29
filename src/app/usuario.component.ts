@@ -6,6 +6,18 @@ import { Component } from "@angular/core";
 })
 
 export class UsuarioComponent{
-    usuarioNombre = "Maria Eugenia";
 
+    usuarios = ['Luis', 'Fernando', 'Lucia']
+    usuarioNombre = '';
+    visible = false;
+
+    constructor() {
+        setTimeout(() => {
+            this.visible = true;
+        }, 3000);
+    }
+
+    addUser() {
+        this.usuarios.push(this.usuarioNombre);
+    }
 }
