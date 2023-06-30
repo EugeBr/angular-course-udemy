@@ -11,4 +11,10 @@ export class LibrosComponent {
   eliminarLibro(libro: string) {
     this.libros = this.libros.filter( p => p !== libro)
   }
+
+  guardarlibro(f: any) {
+    if(f.value) {
+      this.libros.push(f.value.nombreLibro);
+    }
+  }
 }
