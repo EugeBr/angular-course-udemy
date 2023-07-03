@@ -14,4 +14,9 @@ export class LibrosService {
     obtenerLibros() {
         return [...this.libros];
     }
+
+    eliminarLibro(libroNombre: string) {
+        this.libros.filter(x => x !== libroNombre);
+        this.librosSubject.next(libroNombre);
+      }
 }

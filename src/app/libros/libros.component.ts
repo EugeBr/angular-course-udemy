@@ -20,8 +20,8 @@ export class LibrosComponent implements OnInit {
     });
   }
 
-  eliminarLibro(libro: string) {
-
+  eliminarLibro(libroNombre: string) {
+    this.libros.filter(x => x !== libroNombre);
   }
 
   guardarlibro(f: any) {
