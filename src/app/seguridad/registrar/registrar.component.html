@@ -1,5 +1,51 @@
 <section>
-    <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm" (ngSubmit)="registrarUsuario(f)">
+    <form 
+        fxLayout="column" 
+        fxLayoutAlign="center center" 
+        #f="ngForm" 
+        (ngSubmit)="registrarUsuario(f)"
+        fxLayoutGap="10px"
+    >
+        
+        <mat-form-field>
+            <mat-label>Ingrese Nombre</mat-label>
+            <input 
+                type="text" 
+                ngModel 
+                name="nombre" 
+                required
+                placeholder="Ingrese nombre"
+                matInput
+            >
+            <mat-error>debe ingresar nombre</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Ingrese Apellidos</mat-label>
+            <input 
+                type="text" 
+                ngModel 
+                name="apellidos" 
+                required
+                placeholder="Ingrese apellidos"
+                matInput
+                >
+            <mat-error>debe ingresar apellidos</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Ingrese Username</mat-label>
+            <input 
+                type="text" 
+                ngModel 
+                name="username" 
+                required
+                placeholder="username"
+                matInput
+                >
+            <mat-error>debe ingresar username</mat-error>
+        </mat-form-field>
+        
         <mat-form-field>
             <mat-label>Ingrese Email</mat-label>
             <input 
@@ -29,7 +75,7 @@
             <mat-error>El password debe tener mas de 6 caracteres</mat-error>
         </mat-form-field>
 
-        <button type="submit" mat-raised-button color="primary">Guardar</button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Guardar</button>
 
     </form>
 </section>
